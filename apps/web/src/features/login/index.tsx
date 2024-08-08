@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { values } from "cypress/types/lodash";
+import useLogin from "@/hooks/api/auth/useLogin";
 import { useFormik } from "formik";
 import { LoginSchema } from "./schemas/LoginSchema";
-import useLogin from "@/hooks/api/auth/useLogin";
 
 const LoginPage = () => {
   const { login, isLoading } = useLogin();
