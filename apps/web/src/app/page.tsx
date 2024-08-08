@@ -1,7 +1,11 @@
 import Homepage from "@/features/home";
 
 const Home = () => {
-  return <Homepage />;
+  return (
+    <div>
+      <Homepage />
+    </div>
+  );
 };
 
 export default Home;

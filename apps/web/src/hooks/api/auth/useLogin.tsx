@@ -17,22 +17,20 @@ interface LoginPayload {
 const useLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useAppDispatch();
-  const router = useRouter()
-  const {axiosInstance} = useAxios()
-  
+  const router = useRouter();
+  const { axiosInstance } = useAxios();
 
   const login = async (payload: LoginPayload) => {
     setIsLoading(true);
     try {
-      const { data } = await axiosInstance.post("/api/auth/login", payload);
+      const { data } = await axiosInstance.post("/auth/login", payload);
       dispatch(loginAction(data));
       toast("Login Success", { position: "top-left" });
-      router.push("/")
+      router.push("/");
     } catch (error) {
       if (error instanceof AxiosError) {
         toast.error(error.response?.data || "Something went wrong");
       }
-      console.log(error);
     } finally {
       setIsLoading(false);
     }

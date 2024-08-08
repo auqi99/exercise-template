@@ -14,12 +14,12 @@ interface RegisterArgs {
 const useRegister = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const {axiosInstance} = useAxios()
+  const { axiosInstance } = useAxios();
 
   const register = async (payload: RegisterArgs) => {
     setIsLoading(true);
     try {
-      await axiosInstance.post("/api/auth/register", {
+      await axiosInstance.post("/auth/register", {
         name: payload.name,
         email: payload.email,
         password: payload.password,

@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import useLogin from "@/hooks/api/auth/useLogin";
 import { useFormik } from "formik";
 import { LoginSchema } from "./schemas/LoginSchema";
+import Link from "next/link";
 
 const LoginPage = () => {
   const { login, isLoading } = useLogin();
@@ -58,11 +59,18 @@ const LoginPage = () => {
                     onBlur={formik.handleBlur}
                   />
                 </div>
-                <div className="flex flex-col space-y-1.5"></div>
+
+                <Link href={"/forgot-password"}>
+                  <p className="text-right">Forgot password ?</p>
+                </Link>
               </div>
+
               <Button className="mt-6 w-full" disabled={isLoading}>
                 {isLoading ? "Loading..." : "Submit"}
               </Button>
+              <Link href={"/register"}>
+                  <p className="text-center">ga punya akun ya ? daftar sini aja</p>
+                </Link>
             </form>
           </CardContent>
         </Card>
