@@ -9,7 +9,7 @@ import { LoginSchema } from "./schemas/LoginSchema";
 import Link from "next/link";
 
 const LoginPage = () => {
-  const { login, isLoading } = useLogin();
+  const { mutateAsync: login, isPending } = useLogin();
 
   const formik = useFormik({
     initialValues: {
@@ -65,8 +65,8 @@ const LoginPage = () => {
                 </Link>
               </div>
 
-              <Button className="mt-6 w-full" disabled={isLoading}>
-                {isLoading ? "Loading..." : "Submit"}
+              <Button className="mt-6 w-full" disabled={isPending}>
+                {isPending ? "Loading..." : "Submit"}
               </Button>
               <Link href={"/register"}>
                   <p className="text-center">ga punya akun ya ? daftar sini aja</p>
