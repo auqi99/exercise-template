@@ -1,11 +1,8 @@
 import RegisterPage from "@/features/register";
 
 const Register = () => {
-  return (
-    <div>
-      <RegisterPage />
-    </div>
-  );
+  
+  return <RegisterPage />;
 };
 
 export default Register;

@@ -1,11 +1,9 @@
 import Homepage from "@/features/home";
 
-const Home = () => {
-  return (
-    <div>
-      <Homepage />
-    </div>
-  );
+const Home = async () => {
+
+
+  return <Homepage />;
 };
 
 export default Home;
