@@ -16,9 +16,10 @@ const useGetBlogs = (queries: GetBlogQueries) => {
     queryKey: ["blogs", queries],
     queryFn: async () => {
       const { data } = await axiosInstance.get<PageableResponse<Blog>>(
-        "blogs",
+        "/blogs",
         { params: queries },
       );
+
       return data;
     },
   });
