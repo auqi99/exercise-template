@@ -14,12 +14,12 @@ export class BlogRouter {
   }
 
   private initializeRoutes(): void {
-    this.router.get('/', this.blogController.getEvents);
+    this.router.get('/', this.blogController.getBlogs);
     this.router.post(
       '/',
       verifyToken,
       uploader().single('thumbnail'),
-      this.blogController.createEvent,
+      this.blogController.createBlog,
     );
   }
 
